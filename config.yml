@@ -44,7 +44,7 @@ dns:
 
 Proxy:
 - { name: "日本 - 中转 1", type: ss, server: "jp.cn2.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: 日本 - "中转 2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "中转 北京-日本 1", type: ss, server: "bj.jp.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "美国 - 中转 1", type: ss, server: "cn2.usa.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "美国 - 中转 2", type: ss, server: "cn2.usa.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
