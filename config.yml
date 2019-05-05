@@ -20,9 +20,7 @@ log-level: silent
 # clash 的 RESTful API
 external-controller: 127.0.0.1:9090
 
-# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `${API}/ui`
-# 参数应填写配置目录的相对路径或绝对路径。
-# external-ui: folder
+
 
 # RESTful API 的口令 (可选)
 secret: ""
@@ -42,42 +40,25 @@ dns:
      - tls://dns.rubyfish.cn:853
      - tls://dns.google
 
-# clash DNS 请求逻辑：
-# (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
-# (2) clash 将选取 nameserver 列表内，解析最快的结果。
-# (3) 若解析结果中，IP 地址属于 国外，那么 clash 将选择 fallback 列表内，解析最快的结果。
-#
-# 因此，我在 nameserver 和 fallback 内都放置了无污染、解析速度较快的国内 DNS 服务器，以达到最快的解析速度。
-# 但是 fallback 列表内服务器会用在解析境外网站，为了结果绝对无污染，我仅保留了支持 DoT/DoH 的两个服务器。
-# 
-# 注意：
-# (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 开头的 DNS 服务器，但是通常对于国内没有太大必要。
-# (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
+
 
 Proxy:
-- { name: "中转 上海-日本 1", type: ss, server: "sh.jp.t.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-日本 2", type: ss, server: "sh.jp.2.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 北京-日本 1", type: ss, server: "bj.jp.1.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-日本 1", type: ss, server: "sz.jp.1.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-日本 2", type: ss, server: "sz.jp.2.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-美国 1", type: ss, server: "sh.lax.t.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-美国 2", type: ss, server: "sh.us.a.2.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-美国 1", type: ss, server: "sz.lax.1.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-美国 2", type: ss, server: "sz.lax.2.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-香港 1", type: ss, server: "sh.hk.t.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-香港 2", type: ss, server: "sh.hk.tran.2.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 上海-香港 3", type: ss, server: "sh.hk.tran.3.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 杭州-香港 1", type: ss, server: "hz.tw.t.1.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-香港 1", type: ss, server: "sz.hk.t.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-香港 2", type: ss, server: "sz.ctm.tran.1.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
-- { name: "中转 深圳-香港 3", type: ss, server: "sz.hk.tran.3.fastnode.top", port: 11944, cipher:rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 1", type: ss, server: "jp.cn2.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: 日本 - "中转 2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "中转 北京-日本 1", type: ss, server: "bj.jp.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "美国 - 中转 1", type: ss, server: "cn2.usa.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "美国 - 中转 2", type: ss, server: "cn2.usa.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "美国 - 中转 3", type: ss, server: "cn2.usa.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "中转 上海-香港 1", type: ss, server: "sh.hk.t.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "中转 杭州-香港 1", type: ss, server: "hz.tw.t.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 
 Proxy Group:
+- { name: "🇯🇵日本", type: url-test, proxies: ["日本 - 中转 1", "日本 - 中转 2", "中转 北京-日本 1"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
+- { name: "🇺🇸米国", type: url-test, proxies: ["美国 - 中转 1", "美国 - 中转 2", "美国 - 中转 3"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
+- { name: "🇭🇰香港", type: url-test, proxies: ["中转 上海-香港 1", "中转 杭州-香港 1"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
 - { name: "Proxy", type: select, proxies: ["🇯🇵日本", "🇺🇸米国", "🇭🇰香港"] }
-- { name: "🇯🇵日本", type: url-test, proxies: ["中转 上海-日本 1", "中转 上海-日本 2", "中转 北京-日本 1", "中转 深圳-日本 1", "中转 深圳-日本 2, "], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "🇺🇸米国", type: url-test, proxies: ["中转 上海-美国 1", "中转 上海-美国 2", "中转 深圳-美国 1", "中转 深圳-美国 2, "], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "🇭🇰香港", type: url-test, proxies: ["中转 上海-香港 1", "中转 上海-香港 2", "中转 上海-香港 3", "中转 杭州-香港 1", "中转 深圳-香港 1", "中转 深圳-香港 2", "中转 深圳-香港 3, "], url: "http://www.gstatic.com/generate_204", interval: 1200 }
 
+Rule:
 # Apple
 - DOMAIN,hls.itunes.apple.com,Proxy
 - DOMAIN,itunes.apple.com,Proxy
@@ -85,6 +66,7 @@ Proxy Group:
 - DOMAIN-SUFFIX,digicert.com,DIRECT
 - DOMAIN-SUFFIX,icloud.com,DIRECT
 - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
 - DOMAIN-SUFFIX,mzstatic.com,DIRECT
 - DOMAIN-SUFFIX,akadns.net,DIRECT
 - DOMAIN-SUFFIX,aaplimg.com,DIRECT
@@ -94,7 +76,6 @@ Proxy Group:
 
 
 # 自定义规则
-- PROCESS-NAME,Microsoft AutoUpdate,DIRECT
 - DOMAIN-SUFFIX,officecdn-microsoft-com.akamaized.net,DIRECT
 - DOMAIN-KEYWORD,livedoor.jp,🇯🇵日本
 - DOMAIN-SUFFIX,2ch.net,🇯🇵日本
@@ -192,7 +173,6 @@ Proxy Group:
 - DOMAIN-SUFFIX,qiyipic.com,DIRECT
 - DOMAIN-SUFFIX,qq.com,DIRECT
 - DOMAIN-SUFFIX,qqurl.com,DIRECT
-- DOMAIN-SUFFIX,tencent.com,DIRECT
 - DOMAIN-SUFFIX,rarbg.to,DIRECT
 - DOMAIN-SUFFIX,ruguoapp.com,DIRECT
 - DOMAIN-SUFFIX,segmentfault.com,DIRECT
@@ -206,7 +186,9 @@ Proxy Group:
 - DOMAIN-SUFFIX,sspai.com,DIRECT
 - DOMAIN-SUFFIX,suning.com,DIRECT
 - DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
 - DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,tianyancha.com,DIRECT
 - DOMAIN-SUFFIX,tmall.com,DIRECT
 - DOMAIN-SUFFIX,tudou.com,DIRECT
 - DOMAIN-SUFFIX,umetrip.com,DIRECT
