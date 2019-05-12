@@ -47,7 +47,6 @@ Proxy:
 - { name: "日本 - 中转 2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "日本 - 中转 3", type: ss, server: "mod.cn2.jp.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "日本 - 中转 4", type: ss, server: "mod.cn2.jp.4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "中转 北京-日本 1", type: ss, server: "bj.jp.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "美国 - 中转 1", type: ss, server: "cn2.usa.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "美国 - 中转 2", type: ss, server: "cn2.usa.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "美国 - 中转 3", type: ss, server: "cn2.usa.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
@@ -62,13 +61,11 @@ Proxy:
 - { name: "香港 - 中转 6", type: ss, server: "hk.cn2.6.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "香港 - 中转 7", type: ss, server: "hk.cn2.7.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 - { name: "香港 - 中转 8", type: ss, server: "hk.cn2.8.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "中转 上海-香港 1", type: ss, server: "sh.hk.t.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "中转 杭州-香港 1", type: ss, server: "hz.tw.t.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 
 Proxy Group:
-- { name: "🇯🇵日本", type: url-test, proxies: ["日本 - 中转 1", "日本 - 中转 2", "日本 - 中转 3", "日本 - 中转 4", "中转 北京-日本 1"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
+- { name: "🇯🇵日本", type: url-test, proxies: ["日本 - 中转 1", "日本 - 中转 2", "日本 - 中转 3", "日本 - 中转 4"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
 - { name: "🇺🇸米国", type: url-test, proxies: ["美国 - 中转 1", "美国 - 中转 2", "美国 - 中转 3", "美国 - 中转 4", "美国 - 中转 5", "美国 - 中转 6"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "🇭🇰香港", type: url-test, proxies: ["中转 上海-香港 1", "中转 杭州-香港 1"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
+- { name: "🇭🇰香港", type: url-test, proxies: ["香港 - 中转 1", "香港 - 中转 2", "香港 - 中转 3", "香港 - 中转 4", "香港 - 中转 5", "香港 - 中转 6", "香港 - 中转 7", "香港 - 中转 8"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
 - { name: "Proxy", type: select, proxies: ["🇯🇵日本", "🇺🇸米国", "🇭🇰香港"] }
 
 Rule:
