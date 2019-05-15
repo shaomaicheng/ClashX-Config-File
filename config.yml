@@ -43,26 +43,26 @@ dns:
 
 
 Proxy:
-- { name: "日本 - 中转 1", type: ss, server: "jp.cn2.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "日本 - 中转 2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "日本 - 中转 3", type: ss, server: "mod.cn2.jp.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "日本 - 中转 4", type: ss, server: "mod.cn2.jp.4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 1", type: ss, server: "cn2.usa.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 2", type: ss, server: "cn2.usa.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 3", type: ss, server: "cn2.usa.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 4", type: ss, server: "usa.cn2.mod4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 5", type: ss, server: "usa.cn2.mod5.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "美国 - 中转 6", type: ss, server: "usa.cn2.mod6.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "HK - Hongkong 1", type: ss, server: "tsuenwan1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "HK - Hongkong 2", type: ss, server: "tsuenwan2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "HK - Hongkong 3", type: ss, server: "tsuenwan3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
-- { name: "HK - Hongkong 4", type: ss, server: "tsuenwan4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 1 -CN2", type: ss, server: "jp.cn2.1.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 2 -CN2", type: ss, server: "jp.cn2.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 3 -CN2", type: ss, server: "mod.cn2.jp.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 4 -CN2", type: ss, server: "mod.cn2.jp.4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "香港 - 中转 9 -BGP", type: ss, server: "sh.hk.t.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "香港 - 中转 10 -BGP", type: ss, server: "sh.hk.tran.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "香港 - 中转 11 -BGP", type: ss, server: "sh.hk.tran.3.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "香港 - 中转 12 -BGP", type: ss, server: "sh.hk.tran.4.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "香港 - 中转 13 -BGP", type: ss, server: "sh.hk.tran.5.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "美国 - 中转 7 -BGP", type: ss, server: "sh.lax.t.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "美国 - 中转 8 -BGP", type: ss, server: "sh.us.a.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 5 -BGP", type: ss, server: "sh.jp.t.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
+- { name: "日本 - 中转 6 -BGP", type: ss, server: "sh.jp.2.fastnode.top", port: 11944, cipher: rc4-md5, password: "kami3333" }
 
 Proxy Group:
-- { name: "🇯🇵日本", type: url-test, proxies: ["日本 - 中转 1", "日本 - 中转 2", "日本 - 中转 3", "日本 - 中转 4"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "🇺🇸米国", type: url-test, proxies: ["美国 - 中转 1", "美国 - 中转 2", "美国 - 中转 3", "美国 - 中转 4", "美国 - 中转 5", "美国 - 中转 6"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "🇭🇰香港", type: url-test, proxies: ["HK - Hongkong 1", "HK - Hongkong 2", "HK - Hongkong 3", "HK - Hongkong 4"], url: "http://www.gstatic.com/generate_204", interval: 1200 }
-- { name: "Proxy", type: select, proxies: ["🇯🇵日本", "🇺🇸米国", "🇭🇰香港"] }
+- { name: "🇯🇵日本", type: url-test, proxies: ["日本 - 中转 1 -CN2", "日本 - 中转 2 -CN2", "日本 - 中转 3 -CN2", "日本 - 中转 4 -CN2"], url: "http://www.gstatic.com/generate_204", interval: 600 }
+- { name: "🇯🇵日本BGP", type: url-test, proxies: ["日本 - 中转 5 -BGP", "日本 - 中转 6 -BGP"], url: "http://www.gstatic.com/generate_204", interval: 600 }
+- { name: "🇺🇸米国", type: url-test, proxies: ["美国 - 中转 7 -BGP", "美国 - 中转 8 -BGP"], url: "http://www.gstatic.com/generate_204", interval: 600 }
+- { name: "🇭🇰香港", type: url-test, proxies: ["香港 - 中转 9 -BGP", "香港 - 中转 10 -BGP", "香港 - 中转 11 -BGP", "香港 - 中转 12 -BGP", "香港 - 中转 13 -BGP"], url: "http://www.gstatic.com/generate_204", interval: 600 }
+- { name: "Proxy", type: select, proxies: ["🇯🇵日本", "🇯🇵日本BGP", "🇺🇸米国", "🇭🇰香港"] }
 
 Rule:
 # Apple
